@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
+  <style>
+    @font-face {
+      font-family: "Raleway";
+      src: url(fonts/Raleway-Regular.ttf) format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Raleway";
+      src: url(fonts/Raleway-Bold.ttf) format("truetype");
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: "Raleway";
+      src: url(fonts/Raleway-ExtraBold.ttf) format("truetype");
+      font-weight: 800;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    .letter-space {
+      letter-spacing: 3px;
+    }
+    .font-regular {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+    }
+    .font-bold {
+      font-family: "Raleway", sans-serif;
+      font-weight: 700;
+    }
+    .font-extraBold {
+      font-family: "Raleway", sans-serif;
+      font-weight: 800;
+    }
+    .flip_H {
+      transform: scale(-1, 1);
+    }
+    .bg-image {
+      background-image: url(section-4/wLogo.png);
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      background-size: contain;
+    }
+
+    .green-color {
+      color: #ccff00;
+    }
+    @keyframes scale {
+      0% {
+        transform: scale(0.97);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    .scale-anim {
+      animation: scale 5s ease-in-out infinite alternate;
+      -webkit-animation: scale 5s ease-in-out infinite alternate;
+    }
+    @-webkit-keyframes focus-in-expand {
+      0% {
+        letter-spacing: -0.5em;
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+    @keyframes focus-in-expand {
+      0% {
+        letter-spacing: -0.5em;
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+    .focus-in-expand {
+      -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+  </style>
+
+  <body>
+    <!-- x-transition:enter="transition ease-out duration-500 focus-in-contract-bck"
+    x-transition:enter-start="opacity-0 transform scale-90"
+    x-transition:enter-end="opacity-100 transform scale-100" -->
+    <header class="px-6 py-10 bg-black">
+      <nav
+        class="flex flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg text-gray-700"
+      >
+        <a href="#"> <img src="./Logo.png" /> </a>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="menu-button"
+          class="h-6 w-6 menu-button cursor-pointer md:hidden block"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+
+        <div class="hidden w-full md:flex md:items-center md:w-auto menu" id="menu">
+          <ul
+            class="pt-4 font-extraBold letter-space text-[18px] text-[#666666] md:flex md:justify-between md:pt-0 md:space-x-4"
+          >
+            <li>
+              <a class="md:p-4 py-2 block hover:text-white" href="#weare">WE ARE</a>
+            </li>
+            <li>
+              <a class="md:p-4 py-2 block hover:text-white" href="#discover">DISCOVER</a>
+            </li>
+            <li>
+              <a class="md:p-4 py-2 block hover:text-white" href="#contact">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="px-4 bg-black pt-4 pb-32" x-data="{ status: 1 }">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 justify-items-center space-x-24 green-color font-bold mx-auto max-w-7xl py-16 transition-all"
+      >
+        <img
+          x-show="status==1"
+          class="scale-anim"
+          src="section-1/slide.png"
+          alt=""
+          x-transition:enter="transition ease-out duration-500"
+          x-transition:enter-start="opacity-0 transform scale-90"
+          x-transition:enter-end="opacity-100 transform scale-100"
+        />
+        <img
+          x-show="status==2"
+          src="section-1/slide2.png"
+          alt=""
+          class="scale-anim"
+          x-transition:enter="transition ease-out duration-500"
+          x-transition:enter-start="opacity-0 transform scale-90"
+          x-transition:enter-end="opacity-100 transform scale-100"
+        />
+        <img
+          x-show="status==3"
+          src="section-1/slide3.png"
+          alt=""
+          class="scale-anim"
+          x-transition:enter="transition ease-out duration-500"
+          x-transition:enter-start="opacity-0 transform scale-90"
+          x-transition:enter-end="opacity-100 transform scale-100"
+        />
+        <div class="pt-10 lg:pt-0">
+          <div x-show="status==1" x-transition:enter="focus-in-expand">
+            <p class="text-3xl lg:text-5xl xl:text-7xl/[80px] max-w-2xl">
+              We Develop Amazing Web & Mobile Apps
+            </p>
+            <p class="text-xl lg:text-2xl xl:text-4xl text-white pt-6">EXPERIENCE & INNOVATION</p>
+          </div>
+          <div x-show="status==2" x-transition:enter="focus-in-expand">
+            <p class="text-3xl lg:text-5xl xl:text-7xl/[80px] max-w-2xl">
+              End to End Development Services
+            </p>
+            <p class="text-xl lg:text-2xl xl:text-4xl text-white pt-6">DEPLOYMENT & SUPPORT</p>
+          </div>
+          <div x-show="status==3" x-transition:enter="focus-in-expand">
+            <p class="text-3xl lg:text-5xl xl:text-7xl/[80px] max-w-2xl">
+              We Deliver The Software You Need
+            </p>
+            <p class="text-xl lg:text-2xl xl:text-4xl text-white pt-6">ANDROID & IOS</p>
+          </div>
+          <div class="space-x-2 pt-6">
+            <button
+              x-on:click="status=1"
+              class="h-[6px] rounded-lg"
+              :class="status==1 ? 'bg-[#ccff00] w-[90px]' : 'bg-white w-[27px] '"
+            />
+
+            <button
+              x-on:click="status=2"
+              class="h-[6px] rounded-lg"
+              :class="status==2 ? 'bg-[#ccff00] w-[90px]' : 'bg-white w-[27px] '"
+            />
+            <button
+              x-on:click="status=3"
+              class="h-[6px] rounded-lg"
+              :class="status==3 ? 'bg-[#ccff00] w-[90px]' : 'bg-white w-[27px] '"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-4 bg-white py-4" id="weare">
+      <div class="flex justify-center sm:justify-between">
+        <p class="font-bold text-[12px]">WHAT WE DO THE BEST</p>
+        <p class="font-bold text-[12px] hidden sm:block">WHAT WE DO THE BEST</p>
+        <p class="font-bold text-[12px] hidden md:block">WHAT WE DO THE BEST</p>
+        <p class="font-bold text-[12px] hidden lg:block">WHAT WE DO THE BEST</p>
+        <p class="font-bold text-[12px] hidden xl:block">WHAT WE DO THE BEST</p>
+      </div>
+      <div
+        class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-3 place-items-center my-24 gap-24"
+      >
+        <div class="space-y-2 flex items-center justify-center flex-col">
+          <img src="/section-2/img1.png" alt="" />
+          <h1 class="font-extraBold text-3xl pt-4 text-center pt-4">
+            Back-end, Front-end Development
+          </h1>
+          <p class="font-regular text-xl text-center w-80">
+            We support your journey from idea, through launch, all the way to long-term growth
+          </p>
+        </div>
+        <div class="space-y-2 flex items-center justify-center flex-col">
+          <img src="/section-2/img2.png" alt="" />
+          <h1 class="font-extraBold text-3xl pt-4 text-center pt-4">Mobile App Development</h1>
+          <p class="font-regular text-xl text-center w-80">
+            We have extensive experience in Android, IOS and Cross platform software development
+          </p>
+        </div>
+        <div class="space-y-2 flex items-center justify-center flex-col">
+          <img src="/section-2/img3.png" alt="" />
+          <h1 class="font-extraBold text-3xl pt-4 text-center pt-4">User Experience Design</h1>
+          <p class="font-regular text-xl text-center w-80">
+            We deliver UX solutions that stand the test of time and grow with your business
+          </p>
+        </div>
+      </div>
+      <div class="flex justify-center sm:justify-between flip_H rotate-180">
+        <p class="font-bold text-[12px]">WHAT WE DO THE BEST</p>
+        <p class="font-bold text-[12px] hidden sm:block">WHAT WE DO THE BEST</p>
+        <p class="font-bold text-[12px] hidden md:block">WHAT WE DO THE BEST</p>
+        <p class="font-bold text-[12px] hidden lg:block">WHAT WE DO THE BEST</p>
+        <p class="font-bold text-[12px] hidden xl:block">WHAT WE DO THE BEST</p>
+      </div>
+    </div>
+
+    <div class="px-4 bg-black py-4" id="discover">
+      <div
+        class="mx-auto max-w-7xl my-64 grid grid-cols-2 justify-items-center content-center place-items-center"
+      >
+        <img id="img" src="section-3/bat.png" class="w-96 h-48 max-w-2xl" />
+        <div class="max-w-2xl">
+          <p class="green-color font-extraBold text-7xl">We Work For</p>
+          <p class="text-gray-300 text-2xl font-regular pt-16 max-w-lg">
+            Over the years, we have worked with many B2B and B2C brands translating their needs and
+            goals into reliable software systems.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-4 bg-white py-2" id="contact">
+      <div class="flex justify-center sm:justify-between">
+        <p class="font-bold text-[12px]">HOW CAN WE HELP YOU</p>
+        <p class="font-bold text-[12px] hidden sm:block">HOW CAN WE HELP YOU</p>
+        <p class="font-bold text-[12px] hidden md:block">HOW CAN WE HELP YOU</p>
+        <p class="font-bold text-[12px] hidden lg:block">HOW CAN WE HELP YOU</p>
+        <p class="font-bold text-[12px] hidden xl:block">HOW CAN WE HELP YOU</p>
+      </div>
+
+      <div class="max-w-7xl my-24 mx-auto bg-white">
+        <h1 class="font-extraBold text-8xl pb-8 text-center lg:text-start">Say Us Hi!</h1>
+
+        <div
+          class="flex items-center lg:justify-between flex-col lg:flex-row space-y-20 lg:space-y-0"
+        >
+          <div class="flex flex-col items-start max-w-xl">
+            <p class="text-2xl font-regular">
+              Our software minds love sharing knowledge, technology insights and ideas.
+            </p>
+            <form class="grid grid-cols-2 gap-6 mt-12 min-w-full">
+              <input
+                type="text"
+                class="border rounded-3xl border-[1px] py-2 border-black px-3 w-full"
+                placeholder="Name"
+              />
+              <input
+                type="text"
+                class="border rounded-3xl border-[1px] py-2 border-black px-3 w-full"
+                placeholder="Mail"
+              />
+              <input
+                type="text"
+                class="border rounded-3xl border-[1px] py-2 border-black px-3 w-full"
+                placeholder="Phone"
+              />
+              <input
+                type="text"
+                class="border rounded-3xl border-[1px] py-2 border-black px-3 w-full"
+                placeholder="Message"
+              />
+
+              <button
+                type="submit"
+                value="Submit"
+                class="border rounded-3xl text-[20px] letter-space font-extraBold border-[1px] py-2 border-black px-3 text-white bg-black transition-colors hover:border-[#D6FE51] hover:text-black hover:bg-[#D6FE51]"
+              >
+                SEND
+              </button>
+            </form>
+          </div>
+          <div
+            class="max-w-4xl grow h-96 bg-image flex flex-col items-start pt-10 pl-5 ml-20 text-3xl space-y-2"
+          >
+            <p>We are London Based.</p>
+            <p>Follow us on social media.</p>
+            <a href="" class="pt-4 underline">LinkedIn</a>
+            <a href="" class="underline">Instagram</a>
+          </div>
+
+          <div
+            class="absolute flex -mr-12 flex-col text-center right-0 -rotate-90 font-regular font-bold text-xs"
+          >
+            <span>COMPANY NO: 12345678</span>
+            <span>REGISTERED IN UK - © 2020</span>
+            <span>WHITE SOFTWARE LTD</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center sm:justify-between flip_H rotate-180">
+        <p class="font-bold text-[12px]">HOW CAN WE HELP YOU</p>
+        <p class="font-bold text-[12px] hidden sm:block">HOW CAN WE HELP YOU</p>
+        <p class="font-bold text-[12px] hidden md:block">HOW CAN WE HELP YOU</p>
+        <p class="font-bold text-[12px] hidden lg:block">HOW CAN WE HELP YOU</p>
+        <p class="font-bold text-[12px] hidden xl:block">HOW CAN WE HELP YOU</p>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    const button = document.getElementById("menu-button");
+    const menu = document.getElementById("menu");
+    if (menu) {
+      button.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    }
+    window.onclick = function (event) {
+      var menu = document.getElementById("menu");
+      if (event.target.contains(menu) && event.target !== menu) {
+        menu.classList.toggle("hidden");
+      }
+    };
+    var img = document.getElementById("img");
+    var slides = [
+      "section-3/bat.png",
+      "section-3/brightmile.png",
+      "section-3/citibank.png",
+      "section-3/imperial.png",
+      "section-3/radio.png",
+      "section-3/resonate.png",
+      "section-3/sporting.png",
+    ];
+
+    var Start = 0;
+
+    function slider() {
+      if (Start < slides.length) {
+        Start = Start + 1;
+      } else {
+        Start = 1;
+      }
+      img.src = slides[Start - 1];
+    }
+    setInterval(slider, 3000);
+  </script>
+</html>
