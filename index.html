@@ -99,9 +99,6 @@
   </style>
 
   <body>
-    <!-- x-transition:enter="transition ease-out duration-500 focus-in-contract-bck"
-    x-transition:enter-start="opacity-0 transform scale-90"
-    x-transition:enter-end="opacity-100 transform scale-100" -->
     <header class="px-6 py-10 bg-black">
       <nav
         class="flex flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg text-gray-700"
@@ -143,11 +140,11 @@
 
     <div class="px-4 bg-black pt-4 pb-32" x-data="{ status: 1 }">
       <div
-        class="grid grid-cols-1 lg:grid-cols-2 justify-items-center space-x-24 green-color font-bold mx-auto max-w-7xl py-16 transition-all"
+        class="grid grid-cols-1 lg:grid-cols-2 justify-items-center space-x-4 lg:space-x-24 green-color font-bold mx-auto max-w-7xl py-8 lg:py-16 transition-all"
       >
         <img
           x-show="status==1"
-          class="scale-anim"
+          class="scale-anim l"
           src="section-1/slide.png"
           alt=""
           x-transition:enter="transition ease-out duration-500"
@@ -259,12 +256,14 @@
 
     <div class="px-4 bg-black py-4" id="discover">
       <div
-        class="mx-auto max-w-7xl my-64 grid grid-cols-2 justify-items-center content-center place-items-center"
+        class="mx-auto max-w-7xl my-8 md:my-32 lg:my-64 grid grid-cols-1 lg:grid-cols-2 justify-items-center content-center place-items-center"
       >
-        <img id="img" src="section-3/bat.png" class="w-96 h-48 max-w-2xl" />
-        <div class="max-w-2xl">
-          <p class="green-color font-extraBold text-7xl">We Work For</p>
-          <p class="text-gray-300 text-2xl font-regular pt-16 max-w-lg">
+        <img id="img" src="section-3/bat2.png" class="w-80 h-24 max-w-2xl order-2 lg:order-1" />
+        <div class="max-w-2xl text-center lg:text-left order-1 lg:order-2 pb-12 lg:pb-0">
+          <p class="green-color font-extraBold text-3xl md:text-5xl lg:text-7xl">We Work For</p>
+          <p
+            class="text-gray-300 text-lg md:text-xl lg:text-2xl font-regular pt-4 md:pt-8 lg:pt-16 max-w-lg"
+          >
             Over the years, we have worked with many B2B and B2C brands translating their needs and
             goals into reliable software systems.
           </p>
@@ -281,17 +280,19 @@
         <p class="font-bold text-[12px] hidden xl:block">HOW CAN WE HELP YOU</p>
       </div>
 
-      <div class="max-w-7xl my-24 mx-auto bg-white">
-        <h1 class="font-extraBold text-8xl pb-8 text-center lg:text-start">Say Us Hi!</h1>
+      <div class="max-w-7xl my-8 md:my-16 lg:my-24 mx-auto bg-white">
+        <h1 class="font-extraBold text-3xl md:text-5xl lg:text-8xl pb-8 text-center lg:text-start">
+          Say Us Hi!
+        </h1>
 
         <div
           class="flex items-center lg:justify-between flex-col lg:flex-row space-y-20 lg:space-y-0"
         >
           <div class="flex flex-col items-start max-w-xl">
-            <p class="text-2xl font-regular">
+            <p class="text-lg md:text-xl lg:text-2xl font-regular text-center lg:text-left">
               Our software minds love sharing knowledge, technology insights and ideas.
             </p>
-            <form class="grid grid-cols-2 gap-6 mt-12 min-w-full">
+            <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12 min-w-full">
               <input
                 type="text"
                 class="border rounded-3xl border-[1px] py-2 border-black px-3 w-full"
@@ -323,7 +324,7 @@
             </form>
           </div>
           <div
-            class="max-w-4xl grow h-96 bg-image flex flex-col items-start pt-10 pl-5 ml-20 text-3xl space-y-2"
+            class="max-w-4xl grow h-40 md:h-52 lg:h-96 bg-image flex flex-col items-start lg:pt-10 lg:pl-5 lg:ml-20 text-3xl space-y-2"
           >
             <p>We are London Based.</p>
             <p>Follow us on social media.</p>
@@ -365,12 +366,12 @@
     };
     var img = document.getElementById("img");
     var slides = [
-      "section-3/bat.png",
+      "section-3/bat2.png",
       "section-3/brightmile.png",
       "section-3/citibank.png",
       "section-3/imperial.png",
       "section-3/radio.png",
-      "section-3/resonate.png",
+      "section-3/resonate2.png",
       "section-3/sporting.png",
     ];
 
